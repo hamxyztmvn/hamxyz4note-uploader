@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id" class="light-mode">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamxyz4note Uploader</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📤</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-container">
+                <i class="fas fa-cloud-upload-alt logo-icon"></i>
+                <h1 class="logo-text">Hamxyz4note Uploader</h1>
+            </div>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-checkbox">
+                <label for="theme-switch" class="theme-label">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                    <span class="theme-ball"></span>
+                </label>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h2 class="upload-title">Upload File Anda</h2>
+                    <p class="upload-subtitle">Seret & lepas file atau klik untuk memilih</p>
+                    <p class="upload-formats">Format yang didukung: ZIP, RAR, Foto (JPG, PNG, GIF), Video (MP4, AVI, MKV), Dokumen (PDF, DOC, TXT) dan lainnya</p>
+                    <input type="file" id="fileInput" class="file-input" multiple>
+                    <label for="fileInput" class="upload-button">
+                        <i class="fas fa-folder-open"></i> Pilih File
+                    </label>
+                </div>
+                
+                <!-- Upload Progress -->
+                <div class="upload-progress" id="uploadProgress">
+                    <div class="progress-header">
+                        <h3><i class="fas fa-spinner fa-spin"></i> Mengunggah File...</h3>
+                        <button class="cancel-button" id="cancelUpload">
+                            <i class="fas fa-times"></i> Batalkan
+                        </button>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                        <div class="progress-text" id="progressText">0%</div>
+                    </div>
+                    <div class="progress-details">
+                        <p id="progressDetails">Memulai unggahan...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- File List Section -->
+            <section class="files-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-file-alt"></i> File Terbaru</h2>
+                    <div class="sort-options">
+                        <button class="sort-button active" data-sort="date">
+                            <i class="fas fa-calendar"></i> Terbaru
+                        </button>
+                        <button class="sort-button" data-sort="name">
+                            <i class="fas fa-font"></i> Nama
+                        </button>
+                        <button class="sort-button" data-sort="size">
+                            <i class="fas fa-weight-hanging"></i> Ukuran
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="files-list" id="filesList">
+                    <!-- File items will be dynamically added here -->
+                    <div class="empty-state">
+                        <i class="fas fa-file-import"></i>
+                        <h3>Belum ada file</h3>
+                        <p>Unggah file pertama Anda untuk melihatnya di sini</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Instructions Section -->
+            <section class="instructions-section">
+                <h2><i class="fas fa-info-circle"></i> Cara Menggunakan</h2>
+                <div class="instructions-grid">
+                    <div class="instruction-card">
+                        <div class="instruction-icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <h3>Unggah File</h3>
+                        <p>Pilih atau seret file ke area unggahan. File akan langsung terkirim ke server.</p>
+                    </div>
+                    <div class="instruction-card">
+                        <div class="instruction-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h3>Dapatkan Link</h3>
+                        <p>Setelah berhasil diunggah, Anda akan mendapatkan link untuk berbagi atau mengunduh.</p>
+                    </div>
+                    <div class="instruction-card">
+                        <div class="instruction-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h3>Bagikan</h3>
+                        <p>Salin link dan bagikan ke siapa saja. File juga akan dikirim ke Telegram.</p>
+                    </div>
+                    <div class="instruction-card">
+                        <div class="instruction-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Akses di Mana Saja</h3>
+                        <p>Akses website ini dari PC, laptop, atau smartphone Anda kapan saja.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2023 Hamxyz4note Uploader. Semua file yang diunggah akan dikirim ke Telegram.</p>
+            <p class="footer-links">
+                <a href="#"><i class="fas fa-shield-alt"></i> Privasi</a>
+                <a href="#"><i class="fas fa-question-circle"></i> Bantuan</a>
+                <a href="#"><i class="fas fa-envelope"></i> Kontak</a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle notification-icon"></i>
+            <p class="notification-text">File berhasil diunggah!</p>
+        </div>
+    </div>
+
+    <!-- File Modal -->
+    <div class="modal" id="fileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-file-download"></i> File Siap Diunduh</h2>
+                <button class="close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="file-preview">
+                    <i class="fas fa-file-archive" id="fileTypeIcon"></i>
+                    <h3 id="fileName">nama-file.zip</h3>
+                    <div class="file-details">
+                        <p><i class="fas fa-calendar"></i> <span id="fileDate">01 Jan 2023</span></p>
+                        <p><i class="fas fa-weight-hanging"></i> <span id="fileSize">1.2 MB</span></p>
+                    </div>
+                </div>
+                <div class="download-link">
+                    <input type="text" id="downloadUrl" readonly>
+                    <button class="copy-button" id="copyButton">
+                        <i class="fas fa-copy"></i> Salin
+                    </button>
+                </div>
+                <a href="#" class="download-button" id="downloadButton" target="_blank">
+                    <i class="fas fa-download"></i> Unduh File
+                </a>
+                <div class="telegram-notice">
+                    <i class="fab fa-telegram"></i>
+                    <p>File ini juga telah dikirim ke Telegram.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>Mengirim ke Telegram...</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <script src="script.js"></script>
+    <script src="config.js"></script>
+</body>
+</html>
