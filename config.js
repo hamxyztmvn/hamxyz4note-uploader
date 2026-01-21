@@ -3,10 +3,10 @@
 // Konfigurasi Telegram Bot
 const TELEGRAM_CONFIG = {
     // Ganti dengan token bot Telegram Anda
-    BOT_TOKEN: 'YOUR_TELEGRAM_BOT_TOKEN_HERE',
+    BOT_TOKEN: '8320097144:AAFogjSCJV5TO9ugUEbb1AoFWVzJiKyPw0E',
     
     // Ganti dengan chat ID tujuan (bisa user ID atau group ID)
-    CHAT_ID: 'YOUR_TELEGRAM_CHAT_ID_HERE',
+    CHAT_ID: '8200190115',
     
     // URL API Telegram untuk mengirim file
     API_URL: 'https://api.telegram.org/bot'
